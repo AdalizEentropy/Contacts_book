@@ -59,3 +59,30 @@ div.form_buttons button {
     color: white;
     background-color: var(--button-color);
 }
+
+.alert {
+    width: 40%;
+    padding: 40px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid var(--button-color);
+    color: var(--button-color);
+    position: absolute;
+    top: 10%;
+    left: 30%;
+}
+
+.alert_text {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
+}
+
+.alert_close {
+    float: right;
+    padding-top: 5px;
+    font-size: 10px;
+}
