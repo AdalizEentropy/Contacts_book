@@ -19,17 +19,17 @@ window.addEventListener("DOMContentLoaded", () => {
     const alertClose = document.createElement("span");
     alertClose.className = "alert_close";
     alertClose.innerText = "X";
-    
+
     const url = document.createElement("a");
     url.setAttribute("href", "table.html");
-  
+
     const alertText = document.createElement("span");
     alertText.className = "alert_text";
     alertText.innerText = text;
 
     url.append(alertClose);
-    div.append(url, );
-    
+    div.append(url, alertText);
+
     return div;
   }
 
@@ -43,8 +43,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
   document.querySelector(".button_edit").onclick = function () {
     const body = document.querySelector("body");
-    // body.style = 'background-color: #000000B2;';
-    
+    const form = document.querySelector(".form");
+    form.removeChild(document.querySelector(".form_buttons"));
+
+    for (var input of form.getElementsByTagName("input")) {
+      input.setAttribute("disabled", "disabled");
+    }
+
     body.append(createAlert("Contact was changed"));
   };
 });

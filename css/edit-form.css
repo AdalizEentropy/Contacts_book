@@ -65,24 +65,16 @@ div.form_buttons button {
     padding: 40px;
     margin: 10px;
     border-radius: 10px;
-    cursor: pointer;
     background-color: white;
     border: 1px solid var(--button-color);
     color: var(--button-color);
     position: absolute;
     top: 10%;
     left: 30%;
-}
-
-.alert_text {
-    display: table;
-    margin: 0 auto;
-    text-align: center;
+    font-weight: 600;
     font-size: 16px;
 }
 
 .alert_close {
     float: right;
-    padding-top: 5px;
-    font-size: 10px;
 }
