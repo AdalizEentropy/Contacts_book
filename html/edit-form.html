@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/reset-style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/edit-form.css" />
+    <link rel="icon" href="../img/fav.svg" />
+    <title>Contact profile</title>
+    <script src="../js/edit-form.js"></script>
+</head>
+
+<body>
+    <header class="head">
+        <div class="contacts_head">
+            <span class="contacts_label">Contact profile</span>
+        </div>
+    </header>
+
+    <div class="top_line line"></div>
+    <div class="table_container">
+        <div class="table_data">
+            <span class="profile_name">Test Testov
+            </span>
+        </div>
+    </div>
+    <div class="line"></div>
+
+    <div class="form">
+        <form action="">
+            <div>
+                <label for="name">First name</label><br>
+                <input type="text" id="name" value="Test">
+            </div>
+            <div>
+                <label for="lastname">Last name</label><br>
+                <input type="text" id="lastname" value="Testov">
+            </div>
+            <div>
+                <label for="phone">Phone number</label><br>
+                <input type="tel" id="phone" value="+79000000111">
+            </div>
+            <div>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" value="test@gmail.com">
+            </div>
+            <div>
+                <label for="company_name">Company name</label><br>
+                <input type="text" id="company_name" value="NSPK">
+            </div>
+            <div>
+                <label for="job_title">Job Title</label><br>
+                <input type="text" id="job_title" value="Manager">
+            </div>
+        </form>
+
+        <div class="form_buttons">
+            <button onclick="window.location.href = 'table.html'" class="button_back">Back</button>
+            <button onclick="window.location.href = 'table.html'" class="button_edit">Edit</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

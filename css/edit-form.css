@@ -1,0 +1,61 @@
+:root {
+    --panel-label-color: #9F9F9F;
+    --panel-input-color: #8F8F8FB2;
+    --panel-input-border-color: #DCDCDC;
+}
+
+.profile_name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--label-color);
+}
+
+.form {
+    width: 30%;
+    margin: 32px 70px;
+}
+
+form label {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--panel-label-color);
+    margin-bottom: 8px;
+}
+
+form input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--panel-input-border-color);
+    padding: 8px 0px;
+    font-size: 14px;
+    margin-bottom: 16px;
+    color: var(--panel-input-color);
+}
+
+.form_buttons {
+    display: flex;
+    justify-content: start;
+}
+
+div.form_buttons button {
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 10px;
+    border-color: var(--button-color);
+    padding: 8px 24px 8px 24px;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.button_back {
+    margin: 32px 16px 0 0;
+    color: var(--button-color);
+    background-color: white;
+}
+
+.button_edit {
+    margin: 32px 16px 0 0;
+    color: white;
+    background-color: var(--button-color);
+}

@@ -1,0 +1,50 @@
+.table_container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 70px 0 70px;
+}
+
+.contact_add_button {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+div.contact_add_button button {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+    background-color: var(--button-color);
+    border-radius: 10px;
+    width: 234px;
+    padding: 5px 0 6px 0;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+}
+
+table {
+    width: 100%;
+    color: var(--label-color);
+    border-collapse: collapse;
+}
+
+.contacts_table {
+    margin-top: 32px;
+    padding: 32px 70px;
+    height: calc(100% - 44px);
+}
+
+tr {
+    border-bottom: 1px solid #DCDCDC;
+}
+
+th {
+    padding: 12px 24px;
+    text-align: left;
+}
+
+td {
+    padding: 12px 24px;
+}

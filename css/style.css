@@ -1,0 +1,142 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap);
+
+:root {
+    --label-color: #000070;
+    --not-active-color: #8F8F8F80;
+    --button-color: #5555A8;
+    --count-background-color: #F4F8FB;
+}
+
+html,
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.line {
+    background-color: var(--not-active-color);
+    width: 100%;
+    height: 1px;
+}
+
+.head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contacts_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 273px;
+    height: 58px;
+    margin: 24px 0 0 70px;
+}
+
+.contacts_label {
+    color: var(--label-color);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.contacts_count {
+    color: var(--not-active-color);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.search {
+    height: 20px;
+    margin: 49px 85px 0 0;
+}
+
+.top_line {
+    margin-top: 32px
+}
+
+.table_container {
+    margin: 0 70px 0 70px;
+    padding: 1px 4px 0 4px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.table_data {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.table_active_button {
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--label-color);
+}
+
+span.table_active_button a {
+    color: var(--label-color);
+}
+
+
+.table_not_active_button {
+    margin: 0 0 0 16px;
+}
+
+span.table_not_active_button a {
+    color: var(--not-active-color);
+}
+
+.table_button_count {
+    background-color: var(--count-background-color);
+    border-radius: 4px;
+    padding: 0px 4px 0px 4px;
+}
+
+.contacts {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 227px;
+}
+
+div.contacts img {
+    border: 1px solid black;
+    width: 218px;
+    height: 181px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contacts_empty_data {
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--label-color);
+    display: flex;
+    justify-content: center;
+    margin: 8px 0 0 0;
+}
+
+.contacts_empty_button {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0 0 0;
+}
+
+div.contacts_empty_button button {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+    background-color: var(--button-color);
+    border-radius: 10px;
+    border-color: var(--button-color);
+    width: 234px;
+    padding: 5px 0 6px 0;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+}

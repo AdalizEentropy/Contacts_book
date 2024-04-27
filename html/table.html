@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../css/reset-style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/table.css" />
+    <link rel="icon" href="../img/fav.svg" />
+    <title>Contacts</title>
+    <script src="../js/table.js"></script>
+</head>
+
+<body>
+    <header class="head">
+        <div class="contacts_head">
+            <span class="contacts_label">Contacts</span>
+            <span class="contacts_count">(0 Contacts)</span>
+        </div>
+        <div class="search">
+            <span class="contacts_search">
+                <img src="../img/Search.png" alt="Search">
+            </span>
+        </div>
+    </header>
+
+    <div class="top_line line"></div>
+    <div class="table_container">
+        <div class="table_data">
+            <span class="table_active_button">
+                <a href="table.html">
+                    <span class="table_active_button_name">All</span>
+                    <span class="table_button_count">68</span>
+                </a>
+            </span>
+            <span class="table_not_active_button">
+                <a href="index.html">
+                    <span class="table_not_active_button_name">Favorites</span>
+                    <span class="table_button_count">0</span>
+                </a>
+            </span>
+        </div>
+        <div class="contact_add_button">
+            <button onclick="window.location.href = 'form.html'">+ Add new contact</button>
+        </div>
+    </div>
+    <div class="line"></div>
+
+    <div class="contacts_table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Last name</th>
+                    <th>Phone number</th>
+                    <th>Email</th>
+                    <th>Company name</th>
+                    <th>Job Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Svetlana</td>
+                    <td>Volokhova</td>
+                    <td>+79000000000</td>
+                    <td>sv@gmail.com</td>
+                    <td>NSPK</td>
+                    <td>Developer</td>
+                </tr>
+                <tr>
+                    <td>Test</td>
+                    <td>Testov</td>
+                    <td>+79000000111</td>
+                    <td>test@gmail.com</td>
+                    <td>NSPK</td>
+                    <td>Manager</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+:root {
+    --panel-label-color: #9F9F9F;
+    --panel-input-border-color: #DCDCDC;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel {
+    border-radius: 10px;
+    width: 617px;
+    margin-top: 100px;
+    background-color: white;
+}
+
+form {
+    width: 100%;
+}
+
+.panel_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 617px;
+    height: 93px;
+    background-color: var(--button-color);
+    border-radius: 10px 10px 0 0;
+}
+
+.panel_header_lable {
+    color: white;
+    margin: 32px 32px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.panel_header_cancle {
+    margin: 24px 24px 0 0;
+    cursor: pointer;
+}
+
+form label {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--panel-label-color);
+    margin-bottom: 8px;
+}
+
+form input {
+    width: 100%;
+    border: 1.5px solid var(--panel-input-border-color);
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+input::placeholder {
+    color: var(--not-active-color);
+}
+
+input:focus {
+    outline: none;
+}
+
+.panel_body {
+    padding: 24px 32px;
+}
+
+.form_buttons {
+    display: flex;
+    justify-content: end;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+div.form_buttons button {
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 10px;
+    border-color: var(--button-color);
+    padding: 8px 24px 8px 24px;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.button_cancle {
+    margin: 48px 0px 48px 16px;
+    color: var(--button-color);
+    background-color: white;
+}
+
+.button_save {
+    margin: 48px 0px 48px 16px;
+    color: white;
+    background-color: var(--button-color);
+}
+
+body {
+    background-color: #000000B2;
+}

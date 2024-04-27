@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../css/reset-style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="icon" href="../img/fav.svg" />
+    <title>Contacts book</title>
+</head>
+
+<body>
+    <header class="head">
+        <div class="contacts_head">
+            <span class="contacts_label">Contacts</span>
+            <span class="contacts_count">(0 Contacts)</span>
+        </div>
+        <div class="search">
+            <span class="contacts_search">
+                <img src="../img/Search.png" alt="Search">
+            </span>
+        </div>
+    </header>
+
+
+    <div class="top_line line"></div>
+    <div class="table_container">
+        <div class="table_data">
+            <span class="table_active_button">
+                <a href="table.html">
+                    <span class="table_active_button_name">All</span>
+                    <span class="table_button_count">0</span>
+                </a>
+            </span>
+            <span class="table_not_active_button">
+                <a href="index.html">
+                    <span class="table_not_active_button_name">Favorites</span>
+                    <span class="table_button_count">0</span>
+                </a>
+            </span>
+        </div>
+    </div>
+    <div class="line"></div>
+
+    <div class="contacts">
+        <img src="../img/cat pic.png" alt="">
+        <div class="contacts_info">
+            <div class="contacts_empty_data">No contacts</div>
+            <div class="contacts_empty_button">
+                <button onclick="window.location.href = 'form.html'">+ Add new contact</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
