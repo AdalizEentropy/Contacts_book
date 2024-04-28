@@ -13,15 +13,10 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   function setSubmit() {
-    const body = document.querySelector("body");
-    const form = document.querySelector(".form");
-    form.removeChild(document.querySelector(".form_buttons"));
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay';
 
-    for (var input of form.getElementsByTagName("input")) {
-      input.setAttribute("disabled", "disabled");
-    }
-
-    body.append(createAlert("Contact was changed"));
+    document.body.append(overlay, createAlert("Contact was changed"));
   }
 
   function createAlert(text) {

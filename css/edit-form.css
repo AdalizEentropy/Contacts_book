@@ -73,8 +73,22 @@ div.form_buttons button {
     left: 30%;
     font-weight: 600;
     font-size: 16px;
+    z-index: 1050;
 }
 
 .alert_close {
     float: right;
+}
+
+.modal-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 1;
+    transition: all 0.2s linear !important;
 }
