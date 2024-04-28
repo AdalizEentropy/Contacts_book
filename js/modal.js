@@ -145,7 +145,7 @@ const Modal = {
         }, 200);
 
         if (type === 'submit') {
-            this.submitFunction();
+            this.submitFunction(this.content);
         }
     },
 
