@@ -12,6 +12,18 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById(id).setAttribute("value", attrValue);
   }
 
+  function setSubmit() {
+    const body = document.querySelector("body");
+    const form = document.querySelector(".form");
+    form.removeChild(document.querySelector(".form_buttons"));
+
+    for (var input of form.getElementsByTagName("input")) {
+      input.setAttribute("disabled", "disabled");
+    }
+
+    body.append(createAlert("Contact was changed"));
+  }
+
   function createAlert(text) {
     const div = document.createElement("div");
     div.className = "alert";
@@ -21,7 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
     alertClose.innerText = "X";
 
     const url = document.createElement("a");
-    url.setAttribute("href", "table.html");
+    url.setAttribute("href", "index.html");
 
     const alertText = document.createElement("span");
     alertText.className = "alert_text";
@@ -37,19 +49,9 @@ window.addEventListener("DOMContentLoaded", () => {
     ".profile_name"
   ).innerText = `${contact.name} ${contact.lastname}`;
 
-  for (var key of Object.keys(contact)) {
+  Object.keys(contact).forEach(key => {
     setFormValue(key, contact[key]);
-  }
+  });
 
-  document.querySelector(".button_edit").onclick = function () {
-    const body = document.querySelector("body");
-    const form = document.querySelector(".form");
-    form.removeChild(document.querySelector(".form_buttons"));
-
-    for (var input of form.getElementsByTagName("input")) {
-      input.setAttribute("disabled", "disabled");
-    }
-
-    body.append(createAlert("Contact was changed"));
-  };
+  document.querySelector(".button_edit").onclick = setSubmit;
 });
