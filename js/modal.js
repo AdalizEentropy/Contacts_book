@@ -32,19 +32,11 @@ const Modal = {
         });
 
         this.build();
-
-        setTimeout(() => {
-            this.overlay.classList.remove('modal-overlay_hidden');
-        });
-
-        setTimeout(() => {
-            this.modalContainer.classList.remove('container_modal_hidden');
-        }, 150);
     },
 
     build() {
         const overlay = document.createElement('div');
-        overlay.className = 'modal-overlay modal-overlay_hidden';
+        overlay.className = 'modal-overlay_hidden';
         overlay.addEventListener('click', this.cancel.bind(this));
 
         const modalContainer = document.createElement('div');
@@ -79,7 +71,7 @@ const Modal = {
         const panelContainerRow = document.createElement('div');
         panelContainerRow.className = 'row';
 
-        if (typeof(this.content) === 'string') {
+        if (typeof (this.content) === 'string') {
             panelContainerRow.innerHTML = this.content;
         } else {
             panelContainerRow.append(this.content);
@@ -126,6 +118,18 @@ const Modal = {
 
     },
 
+    fill() {
+        Object.keys(this.content).forEach(key => {
+            this.content[key].value = "";
+        });
+        this.overlay.classList.add('modal-overlay');
+        this.overlay.classList.remove('modal-overlay_hidden');
+
+        setTimeout(() => {
+            this.modalContainer.classList.remove('container_modal_hidden');
+        }, 150);
+    },
+
     cancel() {
         this.close('cancel');
     },
@@ -137,15 +141,15 @@ const Modal = {
     close(type) {
         this.removeEventListeners();
 
-        this.modalContainer.classList.add('container_modal_hidden');
         this.overlay.classList.add('modal-overlay_hidden');
+        this.overlay.classList.remove('modal-overlay');
 
         setTimeout(() => {
-
+            this.modalContainer.classList.add('container_modal_hidden');
         }, 200);
 
         if (type === 'submit') {
-            this.submitFunction(this.content);
+            this.submitFunction();
         }
     },
 

@@ -24,31 +24,32 @@ let contacts = [
 
 window.addEventListener("DOMContentLoaded", () => {
   function addNewContact() {
+    Modal.fill();
+  }
+
+  function initModal() {
     const modalForm = {
       header: 'Create new contact',
       submitLabel: 'Save Contact',
       cancelLabel: 'Cancel',
       content: makeCreationForm(),
-      submitFunction: (e) => saveContact(e)
+      submitFunction: saveContact
     };
-
     Modal.init(modalForm);
   }
 
-  function saveContact(event) {
-    //TODO не понятно как достать заполненые значения
-    const input = event.target.previousElementSibling;
+  function saveContact() {
+    const contact = {
+      name: document.getElementById("fname").value,
+      lastname: document.getElementById("lname").value,
+      phone: document.getElementById("phone").value,
+      email: document.getElementById("email").value,
+      company_name: document.getElementById("compN").value,
+      job_title: document.getElementById("jobT").value
+    };
 
-    // const contact = {
-    //   name: "Petr2",
-    //   lastname: "Petrov2",
-    //   phone: "+79000000124",
-    //   email: "petrov@ya.ru2",
-    //   company_name: "Sber2",
-    //   job_title: "HR2"
-    // };
-    // contacts.push(contact);
-    // createTableLine(contact);
+    contacts.push(contact);
+    createTableLine(contact);
   }
 
   function showContacts() {
@@ -68,6 +69,7 @@ window.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".contacts_table table tbody").append(tr);
   }
 
+  initModal();
   document.querySelector(".contact_add_button").addEventListener('click', addNewContact);
   showContacts();
 });
