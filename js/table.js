@@ -24,10 +24,6 @@ let contacts = [
 
 window.addEventListener("DOMContentLoaded", () => {
   function addNewContact() {
-    Modal.fill();
-  }
-
-  function initModal() {
     const modalForm = {
       header: 'Create new contact',
       submitLabel: 'Save Contact',
@@ -69,7 +65,6 @@ window.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".contacts_table table tbody").append(tr);
   }
 
-  initModal();
   document.querySelector(".contact_add_button").addEventListener('click', addNewContact);
   showContacts();
 });
