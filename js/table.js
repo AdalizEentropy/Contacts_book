@@ -73,13 +73,19 @@ window.addEventListener("DOMContentLoaded", () => {
       item.addEventListener('change', input => {
         const inputValue = input.target.value;
         validateFormValue(item.name, inputValue);
-        newContact[item.name] = inputValue});
+        newContact[item.name] = inputValue
+      });
     });
   }
 
   function calculateContacts() {
     const contactsCount = document.querySelectorAll("tbody tr").length;
     document.querySelector(".table_button_count").innerText = contactsCount;
+    if (contactsCount == 1) {
+      document.querySelector(".contacts_count").innerText = `(${contactsCount} Contact)`
+    } else {
+      document.querySelector(".contacts_count").innerText = `(${contactsCount} Contacts)`
+    }
   }
 
   document.querySelector(".contact_add_button").addEventListener('click', addNewContact);
