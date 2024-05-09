@@ -69,8 +69,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function addFormValueListener(contactForm) {
     newContact = {};
-    Object.values(contactForm).forEach(value => {
-      value.addEventListener('change', input => newContact[value.name] = input.target.value);
+    Object.values(contactForm).forEach(item => {
+      item.addEventListener('change', input => {
+        const inputValue = input.target.value;
+        validateFormValue(item.name, inputValue);
+        newContact[item.name] = input.target.value});
     });
   }
 
