@@ -17,39 +17,39 @@ form {
 }
 
 .form_buttons {
+    display: flex;
+    justify-content: end;
     margin-top: 24px;
-    float: right;
+    margin-bottom: 7px;
 }
 
 .form_buttons .button_save {
-    margin-top: 12px;
-    width: 152px;
-    padding: 8px;
-    padding-right: 0;
+    padding: 8px 24px 8px 24px;
     background-color: #5555A8;
     color: white;
     border-radius: 10px;
     border-color: #5555A8;
     border-width: 0px;
     cursor: pointer;
+    font-weight: 600;
 }
 
 .form_buttons .button_cancel {
-    width: 75px;
     text-align: center;
-    padding: 8px;
+    padding: 8px 24px 8px 24px;
     color: #5555A8;
     background-color: white;
     border-radius: 10px;
     border: 1px solid;
     border-color: #5555A8;
     cursor: pointer;
+    font-weight: 600;
 }
 
 form label {
     font-size: 16px;
     margin: 12px 0;
-    font-weight: 500;
+    font-weight: 600;
     color: #9F9F9F;
 }
 
@@ -61,6 +61,7 @@ form input {
     border-color: #DCDCDC80;
     border-radius: 8px;
     box-sizing: border-box;
+    font-size: 14px;
 }
 
 form .field {
@@ -98,6 +99,7 @@ input:focus {
     color: white;
     padding: 24px;
     font-size: 24px;
+    font-weight: 700;
 }
 
 .panel-header_button_cancel {
@@ -163,6 +165,10 @@ input:focus {
     margin-top: 70px;
 }
 
+input::placeholder {
+    color: var(--not-active-color);
+}
+
 /*Модальник*/
 .modal-overlay {
     display: block;
@@ -201,31 +207,14 @@ input:focus {
 }
 
 .container_modal .panel-header_button_cancel {
-    width: 80px;
+    content: url("../img/icon.png");
+    margin: 34px 24px 0 0;
+    height: 20px;
+    width: 20px;
     cursor: pointer;
-    position: relative;
 }
 
-.container_modal .panel-header_button_cancel::before,
-.container_modal .panel-header_button_cancel::after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 30%;
-    margin: 50% 35%;
-    height: 2px;
-    background-color: #fff;
-    transform: rotate(45deg) translate(0, -50%);
-    outline: none !important;
-    transition: all 0.15s linear;
-}
-
-.container_modal .panel-header_button_cancel::after {
-    transform: rotate(-45deg) translate(0, -50%);
-}
-
-.container_modal .panel-header_button_cancel:hover::before,
-.container_modal .panel-header_button_cancel:hover::after {
+.container_modal .panel-header_button_cancel:hover {
     opacity: 0.8;
 }
 

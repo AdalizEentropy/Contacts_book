@@ -1,36 +1,28 @@
 function makeCreationForm() {
-    const formFields = {
-        name: 'First name',
-        lastname: 'Last name',
-        phone: 'Phone number',
-        email: 'Email',
-        company_name: 'Company name',
-        job_title: 'Job title'
-    };
-
     const form = document.createElement('form');
     form.className = 'form';
     form.setAttribute('action', '');
 
-    Object.keys(formFields).forEach(key => {
-        form.append(makeFormRow(key, formFields[key]));
+    formFields.forEach(item => {
+        form.append(makeFormRow(item));
     });
 
     return form;
 }
 
-function makeFormRow(fieldName, fieldLabel) {
+function makeFormRow(item) {
     const container = document.createElement('div');
     container.className = 'field';
 
     const label = document.createElement('label');
-    label.setAttribute('for', fieldName);
-    label.innerText = fieldLabel;
+    label.setAttribute('for', item['value']);
+    label.innerText = item['lable'];
 
     const input = document.createElement('input');
-    input.setAttribute('id', fieldName);
-    input.setAttribute('name', fieldName);
-    input.setAttribute('type', 'text');
+    input.setAttribute('id', item['value']);
+    input.setAttribute('name', item['value']);
+    input.setAttribute('type', item['type']);
+    input.setAttribute('placeholder', item['placeholder']);
 
     container.append(label, input);
 

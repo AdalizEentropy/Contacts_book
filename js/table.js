@@ -41,6 +41,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function saveContact() {
     createTableLine(newContact);
+    calculateContacts();
   }
 
   function showContacts() {
@@ -74,7 +75,8 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   function calculateContacts() {
-    contacts.length;
+    const contactsCount = document.querySelectorAll("tbody tr").length;
+    document.querySelector(".table_button_count").innerText = contactsCount;
   }
 
   document.querySelector(".contact_add_button").addEventListener('click', addNewContact);
