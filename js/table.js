@@ -22,30 +22,25 @@ let contacts = [
     job_title: "HR",
   }];
 
+let newContact = {};
+
 window.addEventListener("DOMContentLoaded", () => {
   function addNewContact() {
+    const contactForm = makeCreationForm();
     const modalForm = {
       header: 'Create new contact',
       submitLabel: 'Save Contact',
       cancelLabel: 'Cancel',
-      content: makeCreationForm(),
+      content: contactForm,
       submitFunction: saveContact
     };
+    addFormValueListener(contactForm);
+
     Modal.init(modalForm);
   }
 
   function saveContact() {
-    const contact = {
-      name: document.getElementById("fname").value,
-      lastname: document.getElementById("lname").value,
-      phone: document.getElementById("phone").value,
-      email: document.getElementById("email").value,
-      company_name: document.getElementById("compN").value,
-      job_title: document.getElementById("jobT").value
-    };
-
-    contacts.push(contact);
-    createTableLine(contact);
+    createTableLine(newContact);
   }
 
   function showContacts() {
@@ -55,16 +50,35 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   function createTableLine(contact) {
+    let inputs = ['name', 'lastname', 'phone', 'email', 'company_name', 'job_title'];
+    const formedContact = {};
+    inputs.forEach(input => {
+      formedContact[input] = contact.hasOwnProperty(input) ? contact[input] : "";
+    });
+
     const tr = document.createElement("tr");
-    Object.keys(contact).forEach(key => {
+    Object.keys(formedContact).forEach(key => {
       const td = document.createElement("td");
-      td.textContent = contact[key];
+      td.textContent = formedContact[key];
       tr.append(td);
     });
 
     document.querySelector(".contacts_table table tbody").append(tr);
   }
 
+  function addFormValueListener(contactForm) {
+    newContact = {};
+    Object.values(contactForm).forEach(value => {
+      value.addEventListener('change', input => newContact[value.name] = input.target.value);
+    });
+  }
+
+  function calculateContacts() {
+    contacts.length;
+  }
+
   document.querySelector(".contact_add_button").addEventListener('click', addNewContact);
   showContacts();
+  calculateContacts();
 });
+

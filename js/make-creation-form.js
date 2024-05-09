@@ -1,11 +1,11 @@
 function makeCreationForm() {
     const formFields = {
-        fname: 'First name',
-        lname: 'Last name',
+        name: 'First name',
+        lastname: 'Last name',
         phone: 'Phone number',
         email: 'Email',
-        compN: 'Company name',
-        jobT: 'Job title'
+        company_name: 'Company name',
+        job_title: 'Job title'
     };
 
     const form = document.createElement('form');
