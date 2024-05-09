@@ -73,7 +73,7 @@ window.addEventListener("DOMContentLoaded", () => {
       item.addEventListener('change', input => {
         const inputValue = input.target.value;
         validateFormValue(item.name, inputValue);
-        newContact[item.name] = input.target.value});
+        newContact[item.name] = inputValue});
     });
   }
 
