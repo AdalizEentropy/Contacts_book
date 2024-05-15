@@ -22,7 +22,14 @@ let contacts = [
     job_title: "HR",
   }];
 
-let newContact = {};
+const newContact = {
+  name: "",
+  lastname: "",
+  phone: "",
+  email: "",
+  company_name: "",
+  job_title: ""
+};
 
 window.addEventListener("DOMContentLoaded", () => {
   function addNewContact() {
@@ -34,20 +41,27 @@ window.addEventListener("DOMContentLoaded", () => {
       content: contactForm,
       submitFunction: saveContact
     };
+    clearNewContact();
     addFormValueListener(contactForm);
 
     Modal.init(modalForm);
   }
 
   function saveContact() {
-    createTableLine(newContact);
+    contacts.push(newContact);
+    buildContacts();
     calculateContacts();
   }
 
+  function buildContacts() {
+    const table = document.querySelector("table");
+    table.removeChild(document.querySelector("tbody"));
+    table.append(document.createElement("tbody"));
+    showContacts();
+  }
+
   function showContacts() {
-    contacts.forEach(contact => {
-      createTableLine(contact);
-    });
+    contacts.forEach(createTableLine);
   }
 
   function createTableLine(contact) {
@@ -68,10 +82,9 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   function addFormValueListener(contactForm) {
-    newContact = {};
     Object.values(contactForm).forEach(item => {
-      item.addEventListener('change', input => {
-        const inputValue = input.target.value;
+      item.addEventListener('change', event => {
+        const inputValue = event.target.value;
         validateFormValue(item.name, inputValue);
         newContact[item.name] = inputValue
       });
@@ -79,13 +92,17 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   function calculateContacts() {
-    const contactsCount = document.querySelectorAll("tbody tr").length;
+    const contactsCount = contacts.length;
     document.querySelector(".table_button_count").innerText = contactsCount;
     if (contactsCount == 1) {
       document.querySelector(".contacts_count").innerText = `(${contactsCount} Contact)`
     } else {
       document.querySelector(".contacts_count").innerText = `(${contactsCount} Contacts)`
     }
+  }
+
+  function clearNewContact() {
+    Object.keys(newContact).forEach(key => newContact[key] = "");
   }
 
   document.querySelector(".contact_add_button").addEventListener('click', addNewContact);
