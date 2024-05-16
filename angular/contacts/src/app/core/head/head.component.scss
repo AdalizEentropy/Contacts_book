@@ -1,0 +1,36 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap);
+
+$label-color: #000070;
+$not-active-color: #8F8F8F80;
+
+.head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contacts_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 273px;
+    height: 58px;
+    margin: 24px 0 0 70px;
+}
+
+.contacts_label {
+    color: $label-color;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.contacts_count {
+    color: $not-active-color;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.search {
+    height: 20px;
+    margin: 49px 85px 0 0;
+}
