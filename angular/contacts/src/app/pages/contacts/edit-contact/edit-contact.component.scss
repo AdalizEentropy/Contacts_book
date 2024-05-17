@@ -1,0 +1,137 @@
+$label-color: #000070;
+$button-color: #5555A8;
+$panel-label-color: #9F9F9F;
+$panel-input-color: #8F8F8FB2;
+$panel-input-border-color: #DCDCDC;
+
+.head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contacts_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 273px;
+    height: 58px;
+    margin: 24px 0 0 70px;
+}
+
+.contacts_label {
+    color: $label-color;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.line {
+    background-color: var(--not-active-color);
+    width: 100%;
+    height: 1px;
+}
+
+.top_line {
+    margin-top: 32px
+}
+
+.table_container {
+    margin: 0 70px 0 70px;
+    padding: 1px 4px 0 4px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.table_data {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.profile_name {
+    font-size: 20px;
+    font-weight: 700;
+    color: $label-color;
+}
+
+.form {
+    width: 30%;
+    margin: 32px 70px;
+}
+
+form label {
+    font-weight: 600;
+    font-size: 16px;
+    color: $panel-label-color;
+    margin-bottom: 8px;
+}
+
+form input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $panel-input-border-color;
+    padding: 8px 0px;
+    font-size: 14px;
+    margin-bottom: 16px;
+    color: $panel-input-color;
+}
+
+.form_buttons {
+    display: flex;
+    justify-content: start;
+}
+
+div.form_buttons button {
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 10px;
+    border-color: $button-color;
+    padding: 8px 24px 8px 24px;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.button_back {
+    margin: 32px 16px 0 0;
+    color: $button-color;
+    background-color: white;
+}
+
+.button_edit {
+    margin: 32px 16px 0 0;
+    color: white;
+    background-color: $button-color;
+}
+
+.alert {
+    width: 40%;
+    padding: 40px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid $button-color;
+    color: $button-color;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    font-weight: 600;
+    font-size: 16px;
+    z-index: 1050;
+}
+
+.alert_close {
+    float: right;
+}
+
+.modal-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 1;
+    transition: all 0.2s linear !important;
+}

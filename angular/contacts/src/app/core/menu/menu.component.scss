@@ -1,0 +1,52 @@
+$label-color: #000070;
+$not-active-color: #8f8f8f80;
+$count-background-color: #f4f8fb;
+
+a {
+    text-decoration: none;
+}
+
+.line {
+  background-color: $not-active-color;
+  width: 100%;
+  height: 1px;
+}
+
+.top_line {
+  margin-top: 32px;
+}
+
+.table_container {
+  margin: 0 70px 0 70px;
+  padding: 1px 4px 0 4px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.table_data {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.table_active_button {
+  padding-bottom: 16px;
+  border-bottom: 2px solid $label-color;
+}
+
+span.table_active_button a {
+  color: $label-color;
+}
+
+.table_not_active_button {
+  margin: 0 0 0 16px;
+}
+
+span.table_not_active_button a {
+  color: $not-active-color;
+}
+
+.table_button_count {
+  background-color: $count-background-color;
+  border-radius: 4px;
+  padding: 0px 4px 0px 4px;
+}

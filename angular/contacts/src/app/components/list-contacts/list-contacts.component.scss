@@ -1,0 +1,26 @@
+$label-color: #000070;
+
+table {
+    width: 100%;
+    color: $label-color;
+    border-collapse: collapse;
+}
+
+.contacts_table {
+    margin-top: 32px;
+    padding: 32px 70px;
+    height: calc(100% - 44px);
+}
+
+tr {
+    border-bottom: 1px solid #DCDCDC;
+}
+
+th {
+    padding: 12px 24px;
+    text-align: left;
+}
+
+td {
+    padding: 12px 24px;
+}
