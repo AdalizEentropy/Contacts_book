@@ -2,10 +2,6 @@ $label-color: #000070;
 $not-active-color: #8f8f8f80;
 $count-background-color: #f4f8fb;
 
-a {
-    text-decoration: none;
-}
-
 .line {
   background-color: $not-active-color;
   width: 100%;
@@ -31,18 +27,14 @@ a {
 .table_active_button {
   padding-bottom: 16px;
   border-bottom: 2px solid $label-color;
-}
-
-span.table_active_button a {
   color: $label-color;
+  cursor: pointer;
 }
 
 .table_not_active_button {
   margin: 0 0 0 16px;
-}
-
-span.table_not_active_button a {
   color: $not-active-color;
+  cursor: pointer;
 }
 
 .table_button_count {

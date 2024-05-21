@@ -1,3 +1,6 @@
-<app-head></app-head>
-<app-menu></app-menu>
-<app-contacts></app-contacts>
+<app-head [totalUsers]="users.length"></app-head>
+<app-menu [totalUsers]="users.length" (namePage)="namePage = $event"></app-menu>
+<app-contacts>
+    <app-add-contact *ngIf="namePage === 'ADD_CONTACT'"></app-add-contact>
+    <app-list-contacts *ngIf="namePage === 'LIST_CONTACT'" [users]="users"></app-list-contacts>
+</app-contacts>

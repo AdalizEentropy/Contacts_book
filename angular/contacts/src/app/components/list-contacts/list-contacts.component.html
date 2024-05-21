@@ -11,13 +11,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Svetlana</td>
-                <td>Volokhova</td>
-                <td>+79000000000</td>
-                <td>svgmail.com</td>
-                <td>NSPK</td>
-                <td>Developer</td>
+            <tr *ngFor="let user of users">
+                <td>{{ user.name }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.company.name }}</td>
+                <td>{{ user.company.position }}</td>
             </tr>
         </tbody>
     </table>
