@@ -1,11 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-head',
   templateUrl: './head.component.html',
-  styleUrl: './head.component.scss'
+  styleUrl: './head.component.scss',
 })
 export class HeadComponent {
-  @Input() totalUsers: number | undefined
+  public totalUsers: number | undefined = this.usersService.getTotalUsers();
 
+  constructor(public usersService: UsersService) {}
 }

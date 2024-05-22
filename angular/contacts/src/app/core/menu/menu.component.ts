@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +7,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent {
-  @Input() totalUsers: number | undefined
+  public totalUsers: number | undefined = this.usersService.getTotalUsers();
   @Output() namePage: EventEmitter<string> = new EventEmitter();
 
-  constructor() {}
+  constructor(public usersService: UsersService) {}
 
   ngOnInit(): void {
     this.namePage.emit('ADD_CONTACT');

@@ -10,6 +10,7 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
 import { AddFormContactComponent } from './components/add-form-contact/add-form-contact.component';
 import { ListContactsComponent } from './components/list-contacts/list-contacts.component';
 import { EditContactComponent } from './pages/contacts/edit-contact/edit-contact.component';
+import { UsersService } from './services/users.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { EditContactComponent } from './pages/contacts/edit-contact/edit-contact
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

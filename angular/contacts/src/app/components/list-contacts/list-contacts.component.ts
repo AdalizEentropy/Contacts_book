@@ -1,11 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { UsersService } from './../../services/users.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-list-contacts',
   templateUrl: './list-contacts.component.html',
-  styleUrl: './list-contacts.component.scss'
+  styleUrl: './list-contacts.component.scss',
 })
 export class ListContactsComponent {
+  public users: any[] = this.usersService.getUsers();
 
-  @Input() users: any
+  constructor(public usersService: UsersService) {}
 }
