@@ -46,32 +46,32 @@
               placeholder="Type email address"
             />
           </div>
-          <div>
-            <label for="company_name">Company name</label><br />
-            <input
-              formControlName="company_name"
-              type="text"
-              id="company_name"
-              placeholder="Type the person’s company name"
-            />
-          </div>
-          <div>
-            <label for="job_title">Job Title</label><br />
-            <input
-              formControlName="job_title"
-              type="text"
-              id="job_title"
-              placeholder="«Sales Manager»,«Developer», etc."
-            />
+          <div formGroupName="company">
+            <div>
+              <label for="company_name">Company name</label><br />
+              <input
+                formControlName="name"
+                type="text"
+                id="company_name"
+                placeholder="Type the person’s company name"
+              />
+            </div>
+            <div>
+              <label for="job_title">Job Title</label><br />
+              <input
+                formControlName="position"
+                type="text"
+                id="job_title"
+                placeholder="«Sales Manager»,«Developer», etc."
+              />
+            </div>
           </div>
         </form>
       </div>
 
       <div class="form_buttons">
         <button routerLink="/add-contact" class="button_cancle">Cancel</button>
-        <button (click)="addContact()" class="button_save">
-          Save Contact
-        </button>
+        <button (click)="addContact()" class="button_save">Save Contact</button>
       </div>
     </div>
   </div>

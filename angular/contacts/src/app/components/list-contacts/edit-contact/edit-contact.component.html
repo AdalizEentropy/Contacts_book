@@ -1,47 +1,49 @@
 <header class="head">
-    <div class="contacts_head">
-        <span class="contacts_label">Contact profile</span>
-    </div>
+  <div class="contacts_head">
+    <span class="contacts_label">Contact profile</span>
+  </div>
 </header>
 
 <div class="top_line line"></div>
 <div class="table_container">
-    <div class="table_data">
-        <span class="profile_name"></span>
-    </div>
+  <div class="table_data">
+    <span class="profile_name"></span>
+  </div>
 </div>
 <div class="line"></div>
 
 <div class="form">
-    <form action="">
-        <div>
-            <label for="name">First name</label><br>
-            <input type="text" id="name">
-        </div>
-        <div>
-            <label for="lastname">Last name</label><br>
-            <input type="text" id="lastname">
-        </div>
-        <div>
-            <label for="phone">Phone number</label><br>
-            <input type="tel" id="phone">
-        </div>
-        <div>
-            <label for="email">Email</label><br>
-            <input type="email" id="email">
-        </div>
-        <div>
-            <label for="company_name">Company name</label><br>
-            <input type="text" id="company_name">
-        </div>
-        <div>
-            <label for="job_title">Job Title</label><br>
-            <input type="text" id="job_title">
-        </div>
-    </form>
-
-    <div class="form_buttons">
-        <button routerLink="/list-contact" class="button_back">Back</button>
-        <button onclick="window.location.href = 'table.html'" class="button_edit">Edit</button>
+  <form [formGroup]="form" action="">
+    <div>
+      <label for="name">First name</label><br />
+      <input formControlName="name" type="text" id="name" />
     </div>
+    <div>
+      <label for="lastname">Last name</label><br />
+      <input formControlName="username" type="text" id="lastname" />
+    </div>
+    <div>
+      <label for="phone">Phone number</label><br />
+      <input formControlName="phone" type="tel" id="phone" />
+    </div>
+    <div>
+      <label for="email">Email</label><br />
+      <input formControlName="email" type="email" id="email" />
+    </div>
+    <div formGroupName="company">
+      <div>
+        <label for="company_name">Company name</label><br />
+        <input formControlName="name" type="text" id="company_name" />
+      </div>
+      <div>
+        <label for="job_title">Job Title</label><br />
+        <input formControlName="position" type="text" id="job_title" />
+      </div>
+    </div>
+  </form>
+
+  <div class="form_buttons">
+    <button routerLink="/list-contact" class="button_back">Back</button>
+    <button (click)="updateUser()" class="button_edit">Edit</button>
+  </div>
 </div>
