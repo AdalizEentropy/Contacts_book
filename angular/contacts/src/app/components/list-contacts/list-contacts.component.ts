@@ -1,5 +1,5 @@
-import { UsersService } from './../../services/users.service';
 import { Component } from '@angular/core';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-list-contacts',

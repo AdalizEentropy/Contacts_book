@@ -7,10 +7,11 @@ import { HeadComponent } from './core/head/head.component';
 import { MenuComponent } from './core/menu/menu.component';
 import { AddContactComponent } from './components/add-contact/add-contact.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
-import { AddFormContactComponent } from './components/add-form-contact/add-form-contact.component';
+import { AddFormContactComponent } from './components/add-contact/add-form-contact/add-form-contact.component';
 import { ListContactsComponent } from './components/list-contacts/list-contacts.component';
-import { EditContactComponent } from './pages/contacts/edit-contact/edit-contact.component';
+import { EditContactComponent } from './components/list-contacts/edit-contact/edit-contact.component';
 import { UsersService } from './services/users.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UsersService } from './services/users.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [UsersService],
   bootstrap: [AppComponent]

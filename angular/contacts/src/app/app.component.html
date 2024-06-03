@@ -1,6 +1,3 @@
 <app-head></app-head>
-<app-menu (namePage)="namePage = $event"></app-menu>
-<app-contacts>
-    <app-add-contact *ngIf="namePage === 'ADD_CONTACT'"></app-add-contact>
-    <app-list-contacts *ngIf="namePage === 'LIST_CONTACT'"></app-list-contacts>
-</app-contacts>
+<app-menu></app-menu>
+<router-outlet></router-outlet>

@@ -1,13 +1,13 @@
 <div class="top_line line"></div>
 <div class="table_container">
   <div class="table_data">
-    <span class="table_active_button" (click)="openPage('LIST_CONTACT')">
-        <span class="table_active_button_name">All</span>
-        <span class="table_button_count">{{ totalUsers }}</span>
+    <span class="table_active_button" routerLink="/list-contact">
+      <span class="table_active_button_name">All</span>
+      <span class="table_button_count">{{ totalUsers }}</span>
     </span>
-    <span class="table_not_active_button" (click)="openPage('ADD_CONTACT')">
-        <span class="table_not_active_button_name">Favorites</span>
-        <span class="table_button_count">0</span>
+    <span class="table_not_active_button" routerLink="/add-contact">
+      <span class="table_not_active_button_name">Favorites</span>
+      <span class="table_button_count">0</span>
     </span>
   </div>
 </div>

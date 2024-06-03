@@ -1,24 +1,29 @@
 <div class="contacts_table">
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Last name</th>
-                <th>Phone number</th>
-                <th>Email</th>
-                <th>Company name</th>
-                <th>Job Title</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let user of users">
-                <td>{{ user.name }}</td>
-                <td>{{ user.username }}</td>
-                <td>{{ user.phone }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.company.name }}</td>
-                <td>{{ user.company.position }}</td>
-            </tr>
-        </tbody>
-    </table>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Last name</th>
+        <th>Phone number</th>
+        <th>Email</th>
+        <th>Company name</th>
+        <th>Job Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.company.name }}</td>
+        <td>{{ user.company.position }}</td>
+        <td class="contacts_button_edit">
+          <div routerLink="/list-contact/edit-contact/{{ user.id }}">
+            <img src="../../../assets/img/edit.svg" alt="Close" />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

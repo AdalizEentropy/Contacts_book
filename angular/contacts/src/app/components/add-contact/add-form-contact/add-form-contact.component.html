@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="panel">
+    <div class="panel_header">
+      <div class="panel_header_lable">Create new contact</div>
+      <div class="panel_header_cancle" routerLink="/add-contact">
+        <img src="../../../assets/img/icon.png" alt="Close" />
+      </div>
+    </div>
+
+    <div class="panel_body">
+      <div class="form">
+        <form [formGroup]="form" action="">
+          <div>
+            <label for="name">First name</label><br />
+            <input
+              formControlName="name"
+              type="text"
+              id="name"
+              placeholder="Type the person’s phone number"
+            />
+          </div>
+          <div>
+            <label for="lastname">Last name</label><br />
+            <input
+              formControlName="username"
+              type="text"
+              id="lastname"
+              placeholder="Type the person’s last name"
+            />
+          </div>
+          <div>
+            <label for="phone">Phone number</label><br />
+            <input
+              formControlName="phone"
+              type="tel"
+              id="phone"
+              placeholder="Type the person’s phone number"
+            />
+          </div>
+          <div>
+            <label for="email">Email</label><br />
+            <input
+              formControlName="email"
+              type="email"
+              id="email"
+              placeholder="Type email address"
+            />
+          </div>
+          <div>
+            <label for="company_name">Company name</label><br />
+            <input
+              formControlName="company_name"
+              type="text"
+              id="company_name"
+              placeholder="Type the person’s company name"
+            />
+          </div>
+          <div>
+            <label for="job_title">Job Title</label><br />
+            <input
+              formControlName="job_title"
+              type="text"
+              id="job_title"
+              placeholder="«Sales Manager»,«Developer», etc."
+            />
+          </div>
+        </form>
+      </div>
+
+      <div class="form_buttons">
+        <button routerLink="/add-contact" class="button_cancle">Cancel</button>
+        <button (click)="addContact()" class="button_save">
+          Save Contact
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
