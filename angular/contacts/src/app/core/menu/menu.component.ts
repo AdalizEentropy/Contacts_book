@@ -7,14 +7,14 @@ import { UsersService } from '../../services/users.service';
   styleUrl: './menu.component.scss',
 })
 export class MenuComponent {
-  public totalUsers: number | undefined = this.usersService.getTotalUsers();
+  public totalUsers: number;
   @Output() namePage: EventEmitter<string> = new EventEmitter();
 
   constructor(public usersService: UsersService) {}
 
   ngOnInit(): void {
     setInterval(() => {
-      this.totalUsers = this.usersService.getTotalUsers(), 1000;
-    });
+      this.totalUsers = this.usersService.getTotalUsers();
+    }, 1000);
   }
 }

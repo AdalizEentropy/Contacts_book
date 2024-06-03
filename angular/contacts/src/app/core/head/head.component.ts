@@ -7,7 +7,13 @@ import { UsersService } from '../../services/users.service';
   styleUrl: './head.component.scss',
 })
 export class HeadComponent {
-  public totalUsers: number | undefined = this.usersService.getTotalUsers();
+  public totalUsers: number;
 
   constructor(public usersService: UsersService) {}
+
+  ngOnInit(): void {
+    setInterval(() => {
+      this.totalUsers = this.usersService.getTotalUsers();
+    }, 1000);
+  }
 }
