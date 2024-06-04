@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class UsersService {
+  private maxUserId: number | undefined;
   public users = [
     {
       id: 1,
@@ -238,7 +239,9 @@ export class UsersService {
     },
   ];
 
-  constructor() {}
+  constructor() {
+    this.setMaxUserId();
+  }
 
   public getUsers() {
     return this.users;
@@ -253,6 +256,7 @@ export class UsersService {
   }
 
   public addUser(user: any) {
+    user.id = this.getNewUserId();
     this.users.push(user);
   }
 
@@ -260,5 +264,17 @@ export class UsersService {
     this.users = this.users.map((u) =>
       u.id === id ? { ...u, ...user } : { ...u }
     );
+  }
+
+  public getNewUserId() {
+    let newId = this.maxUserId == undefined ? 0 : this.maxUserId + 1;
+    this.maxUserId = newId;
+    return newId;
+  }
+
+  private setMaxUserId() {
+    let ids = this.users.map((user) => user.id);
+
+    this.maxUserId = Math.max(...ids);
   }
 }
