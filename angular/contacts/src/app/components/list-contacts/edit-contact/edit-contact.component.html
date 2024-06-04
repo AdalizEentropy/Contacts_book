@@ -17,6 +17,11 @@
     <div>
       <label for="name">First name</label><br />
       <input formControlName="name" type="text" id="name" />
+      <span
+        class="text-danger"
+        *ngIf="(formControl['name'].touched || submitted) && formControl['name'].errors?.['required']"
+        >Name is required
+      </span>
     </div>
     <div>
       <label for="lastname">Last name</label><br />
@@ -29,6 +34,12 @@
     <div>
       <label for="email">Email</label><br />
       <input formControlName="email" type="email" id="email" />
+      <span
+        class="text-danger"
+        *ngIf="(formControl['email'].touched || submitted) 
+              && (formControl['email'].errors?.['required'] || formControl['email'].errors?.['email'])"
+        >Incorrect email</span
+      >
     </div>
     <div formGroupName="company">
       <div>

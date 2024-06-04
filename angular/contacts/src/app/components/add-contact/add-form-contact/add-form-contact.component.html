@@ -18,6 +18,11 @@
               id="name"
               placeholder="Type the person’s phone number"
             />
+            <span
+              class="text-danger"
+              *ngIf="(formControl['name'].touched || submitted) && formControl['name'].errors?.['required']"
+              >Name is required
+            </span>
           </div>
           <div>
             <label for="lastname">Last name</label><br />
@@ -45,6 +50,12 @@
               id="email"
               placeholder="Type email address"
             />
+            <span
+              class="text-danger"
+              *ngIf="(formControl['email'].touched || submitted) 
+              && (formControl['email'].errors?.['required'] || formControl['email'].errors?.['email'])"
+              >Incorrect email</span
+            >
           </div>
           <div formGroupName="company">
             <div>

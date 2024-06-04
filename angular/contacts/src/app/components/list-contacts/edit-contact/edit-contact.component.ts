@@ -1,6 +1,6 @@
 import { UsersService } from './../../../services/users.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditContactComponent implements OnInit {
   public form: FormGroup;
   private userId: number;
+  public submitted = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,10 +31,10 @@ export class EditContactComponent implements OnInit {
 
   initForm() {
     this.form = this.fb.group({
-      name: '',
+      name: ['', Validators.required],
       username: '',
       phone: '',
-      email: '',
+      email: ['', [Validators.required, Validators.email]],
       company: this.fb.group({ name: '', position: '' }),
     });
 
@@ -41,7 +42,14 @@ export class EditContactComponent implements OnInit {
   }
 
   updateUser() {
-    this.usersService.updateUser(this.userId, this.form.value);
-    this.router.navigate(['list-contact']);
+    this.submitted = true;
+    if (this.form.valid) {
+      this.usersService.updateUser(this.userId, this.form.value);
+      this.router.navigate(['list-contact']);
+    }
+  }
+
+  get formControl() {
+    return this.form.controls;
   }
 }

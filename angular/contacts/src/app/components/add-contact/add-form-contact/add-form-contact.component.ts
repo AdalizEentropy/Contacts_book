@@ -1,4 +1,4 @@
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersService } from '../../../services/users.service';
@@ -10,6 +10,7 @@ import { UsersService } from '../../../services/users.service';
 })
 export class AddFormContactComponent implements OnInit {
   public form: FormGroup;
+  public submitted = false;
 
   constructor(
     private usersService: UsersService,
@@ -23,16 +24,23 @@ export class AddFormContactComponent implements OnInit {
 
   initForm() {
     this.form = this.fb.group({
-      name: '',
+      name: ['', Validators.required],
       username: '',
       phone: '',
-      email: '',
+      email: ['', [Validators.required, Validators.email]],
       company: this.fb.group({ name: '', position: '' }),
     });
   }
 
   addContact() {
-    this.usersService.addUser(this.form.value);
-    this.router.navigate(['list-contact']);
+    this.submitted = true;
+    if (this.form.valid) {
+      this.usersService.addUser(this.form.value);
+      this.router.navigate(['list-contact']);
+    }
+  }
+
+  get formControl() {
+    return this.form.controls;
   }
 }
